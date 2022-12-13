@@ -20,6 +20,7 @@ class Game {
     this.#quantity = new Purchase(amount).getQuantity();
     OutputView.printQuantity(this.#quantity);
     this.#lottos = LottoMaker.generate(this.#quantity);
+    OutputView.printLottos(this.#lottos);
   };
 }
 

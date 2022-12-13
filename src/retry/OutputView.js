@@ -10,6 +10,14 @@ const OutputView = {
   printQuantity(quantity) {
     Console.print(`\n${quantity}개를 구매했습니다.`);
   },
+  /**
+   * 발행된 로또 번호를 출력한다.
+   */
+  printLottos(lottos) {
+    lottos.forEach((lotto) => {
+      Console.print(JSON.stringify(lotto).replace(/,/g, ', '));
+    });
+  },
 };
 
 module.exports = OutputView;
