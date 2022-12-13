@@ -10,6 +10,12 @@ const InputView = {
   purchaseLotto(callback) {
     Console.readLine('구입금액을 입력해 주세요.\n', callback);
   },
+  /**
+   * 당첨 번호를 입력 받는다.
+   */
+  readWinningNumbers(callback) {
+    Console.readLine('당첨 번호를 입력해 주세요.\n', callback);
+  },
 };
 
 module.exports = InputView;
