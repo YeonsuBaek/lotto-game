@@ -1,4 +1,5 @@
 const InputView = require('./InputView');
+const Purchase = require('./Purchase');
 
 class Game {
   purchase() {
@@ -6,7 +7,8 @@ class Game {
   }
 
   handleLottoQuantity = (quantity) => {
-    console.log(quantity);
+    const amount = new Purchase(quantity).getAmount();
+    console.log(amount);
   };
 }
 
