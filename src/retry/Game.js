@@ -2,19 +2,20 @@ const InputView = require('./InputView');
 const OutputView = require('./OutputView');
 const Purchase = require('./Purchase');
 const Lotto = require('./Lotto');
+const Bonus = require('./Bonus');
 const LottoMaker = require('./LottoMaker');
 
 class Game {
   #quantity;
   #lottos;
-  #WinningNumbers;
-  #BonusNumber;
+  WinningNumbers;
+  BonusNumber;
 
   constructor() {
     this.#quantity;
     this.#lottos;
-    this.#WinningNumbers;
-    this.#BonusNumber;
+    this.WinningNumbers;
+    this.BonusNumber;
   }
 
   purchase() {
@@ -37,7 +38,7 @@ class Game {
     const winningList = numbers.split(',').map((number) => {
       return (number = parseInt(number, 10));
     });
-    this.#WinningNumbers = new Lotto(winningList).getWinningNumbers();
+    this.WinningNumbers = new Lotto(winningList).getWinningNumbers();
     this.askBonusNumbers();
   };
 
@@ -46,8 +47,8 @@ class Game {
   }
 
   handleBonusNumber = (number) => {
-    this.#BonusNumber = parseInt(number, 10);
-    console.log(this.#BonusNumber);
+    const bonusNumber = parseInt(number, 10);
+    this.BonusNumber = new Bonus(bonusNumber, this.WinningNumbers).getBonusNumber();
   };
 }
 
