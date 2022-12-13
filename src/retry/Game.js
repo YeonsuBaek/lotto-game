@@ -32,7 +32,6 @@ class Game {
   }
 
   handleWinningNumbers = (numbers) => {
-    console.log(numbers);
     const winningList = numbers.split(',').map((number) => {
       return (number = parseInt(number, 10));
     });
