@@ -8,11 +8,13 @@ class Game {
   #quantity;
   #lottos;
   #WinningNumbers;
+  #BonusNumber;
 
   constructor() {
     this.#quantity;
     this.#lottos;
     this.#WinningNumbers;
+    this.#BonusNumber;
   }
 
   purchase() {
@@ -36,6 +38,16 @@ class Game {
       return (number = parseInt(number, 10));
     });
     this.#WinningNumbers = new Lotto(winningList).getWinningNumbers();
+    this.askBonusNumbers();
+  };
+
+  askBonusNumbers() {
+    InputView.readBonusNumbers(this.handleBonusNumber);
+  }
+
+  handleBonusNumber = (number) => {
+    this.#BonusNumber = parseInt(number, 10);
+    console.log(this.#BonusNumber);
   };
 }
 
